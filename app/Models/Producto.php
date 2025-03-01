@@ -10,7 +10,7 @@ class Producto extends Model
 {
     use HasFactory;
      protected $table = 'productos'; // Nombre correcto de la tabla
-      protected $fillable = ['nombre', 'ubicacion', 'categoria_id', 'marca', 'precio_unitario', 'precio_caja', 'unidad_de_medida', 'cantidad_por_unidad', 'cantidad', 'proveedor_id'];
+      protected $fillable = ['nombre', 'ubicacion', 'categoria_id', 'marca', 'precio_unitario', 'precio_caja', 'unidad_de_medida', 'cantidad_por_unidad', 'cantidad', 'proveedor_id', 'codigo_barras'];
 
     public function categoria()
     {
@@ -20,6 +20,6 @@ class Producto extends Model
 {
     return $this->belongsTo(Proveedor::class, 'proveedor_id');
 }
-   
-  
+
+
 }

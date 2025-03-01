@@ -59,7 +59,10 @@
                             @can('producto-show')
                                 <a class="btn btn-info" href="{{ route('productos.show', $producto->id) }}">Visualizar</a>
                             @endcan
-                            
+                              <!-- Botón para generar PDF del código de barras -->
+
+    <a href="{{ route('productos.generarPdf', $producto->id) }}" class="btn btn-secondary">Generar PDF</a>
+
                             @can('producto-edit')
                                 <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-primary">Editar</a>
                             @endcan

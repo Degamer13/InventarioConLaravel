@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('unidad_de_medida'); // Ejemplo: 'unidad', 'paquete', 'kilo', 'caja'
             $table->integer('cantidad_por_unidad'); // Cuántas unidades hay en una caja, paquete, etc.
             $table->integer('cantidad'); // Cantidad disponible en inventario
+            $table->string('codigo_barras')->nullable();
             //$table->foreignId('proveedor_id')->constrained('proveedores')->onDelete('cascade'); // Relación correcta con proveedores
             $table->timestamps();
         });

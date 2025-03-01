@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
-
+use App\Http\Controllers\CodigoBarrasController;
 use App\Http\Controllers\{
     HomeController,
     AdminHomeController,
@@ -15,7 +15,7 @@ use App\Http\Controllers\{
     PrecioController,
     CompraController,
     VentaController
- 
+
 
 };
 
@@ -54,5 +54,7 @@ Route::get('ventas/total', [VentaController::class, 'totalVentas'])->name('venta
 
 Route::get('/totales', [VentaController::class, 'totalesVentas'])->name('totales.index');
 Route::get('totales/compras', [CompraController::class, 'totalesCompras'])->name('totales.compras');
+Route::get('/producto/{id}/generar-pdf', [ProductoController::class, 'generarPdf'])->name('productos.generarPdf');
+
 });
 
