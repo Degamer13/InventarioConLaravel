@@ -50,7 +50,7 @@
 
         <!-- Unidad de Medida -->
         <div class="form-group">
-            <label for="unidad_medida">Unidad de Medida</label>
+            <label for="unidad_medida">Descripción</label>
             <input type="text" name="unidad_medida" id="unidad_medida" class="form-control" value="{{ $compra->unidad_medida }}" required>
         </div>
 
@@ -69,7 +69,7 @@
        
 
         <!-- Botón de Actualizar -->
-        <button type="submit" class="btn btn-success mt-3">Actualizar Compra</button>
+        <button type="submit" class="btn btn-primary mt-3">Actualizar</button>
         <a href="{{ route('compras.index') }}" class="btn btn-secondary mt-3">Cancelar</a>
     </form>
 

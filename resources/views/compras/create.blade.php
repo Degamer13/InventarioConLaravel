@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Registrar Compra</h1>
+ 
 
     <form action="{{ route('compras.store') }}" method="POST">
         @csrf
@@ -15,9 +16,7 @@
                     <option value="{{ $producto->id }}">{{ $producto->nombre }}</option>
                 @endforeach
             </select>
-            @error('producto_id')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+          
         </div>
 
         <div class="form-group">
@@ -28,9 +27,7 @@
                     <option value="{{ $proveedor->id }}">{{ $proveedor->nombre }}</option>
                 @endforeach
             </select>
-            @error('proveedor_id')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+          
         </div>
 
         <div class="form-group">
@@ -41,33 +38,25 @@
                     <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
                 @endforeach
             </select>
-            @error('categoria_id')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+         
         </div>
 
         <div class="form-group">
-            <label for="unidad_medida">Unidad de Medida</label>
+            <label for="unidad_medida">Descripción</label>
             <input type="text" name="unidad_medida" id="unidad_medida" class="form-control" required>
-            @error('unidad_medida')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+         
         </div>
 
         <div class="form-group">
             <label for="cantidad">Cantidad</label>
             <input type="number" name="cantidad" id="cantidad" class="form-control" required min="1">
-            @error('cantidad')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+           
         </div>
 
         <div class="form-group">
             <label for="precio">Precio</label>
             <input type="number" name="precio" id="precio" class="form-control" required step="0.01" min="0">
-            @error('precio')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+   
         </div>
         
         <button type="submit" class="btn btn-primary">Guardar</button>

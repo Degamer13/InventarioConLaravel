@@ -33,7 +33,7 @@
                 </tbody>
             </table>
             
-            <a href="{{ route('ventas.index') }}" class="btn btn-primary">Volver a la lista de ventas</a>
+            <a href="{{ route('ventas.index') }}" class="btn btn-secondary">Volver a la lista de ventas</a>
         </div>
     </div>
 </div>

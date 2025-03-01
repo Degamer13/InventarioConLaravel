@@ -21,10 +21,10 @@ class CategoriaController extends Controller
 
     }
      public function index(Request $request)
-    
+
     {
         $buscarpor=$request->get('buscarpor');
-        $categorias = Categoria::where('nombre','like','%'.$buscarpor.'%')->paginate(4);
+        $categorias = Categoria::where('nombre','like','%'.$buscarpor.'%')->paginate(5);
     return view('categorias.index',compact('categorias', 'buscarpor'));
 
     }

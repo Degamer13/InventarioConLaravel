@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 28-02-2025 a las 22:50:41
+-- Tiempo de generación: 01-03-2025 a las 15:59:44
 -- Versión del servidor: 8.0.30
 -- Versión de PHP: 8.1.10
 
@@ -29,19 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categorias` (
   `id` bigint UNSIGNED NOT NULL,
-  `nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
---
--- Volcado de datos para la tabla `categorias`
---
-
-INSERT INTO `categorias` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
-(1, 'charcuteria', '2025-02-28 04:28:06', '2025-02-28 04:28:06'),
-(2, 'Alcohol', '2025-02-28 19:53:26', '2025-02-28 19:53:26'),
-(3, 'Viveres', '2025-02-28 21:10:23', '2025-02-28 21:10:23');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -51,21 +42,13 @@ INSERT INTO `categorias` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `clientes` (
   `id` bigint UNSIGNED NOT NULL,
-  `nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `cedula` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `telefono` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cedula` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefono` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
---
--- Volcado de datos para la tabla `clientes`
---
-
-INSERT INTO `clientes` (`id`, `nombre`, `cedula`, `email`, `telefono`, `created_at`, `updated_at`) VALUES
-(1, 'deivys gamarra', 'V28731970', 'gamarraynunezd@gmail.com', '04128726538', '2025-02-28 04:28:49', '2025-02-28 04:29:05'),
-(2, 'andres gamarra', 'V28731968', 'andres@gmail.com', '04249493677', '2025-02-28 08:43:09', '2025-02-28 08:43:09');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -78,19 +61,12 @@ CREATE TABLE `compras` (
   `producto_id` bigint UNSIGNED NOT NULL,
   `proveedor_id` bigint UNSIGNED NOT NULL,
   `categoria_id` bigint UNSIGNED NOT NULL,
-  `unidad_medida` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `unidad_medida` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cantidad` int NOT NULL,
   `precio` decimal(10,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
---
--- Volcado de datos para la tabla `compras`
---
-
-INSERT INTO `compras` (`id`, `producto_id`, `proveedor_id`, `categoria_id`, `unidad_medida`, `cantidad`, `precio`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1, 'docena', 12, 8.97, '2025-02-28 04:36:29', '2025-02-28 04:50:42');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -104,14 +80,7 @@ CREATE TABLE `dolares` (
   `precio` decimal(10,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
---
--- Volcado de datos para la tabla `dolares`
---
-
-INSERT INTO `dolares` (`id`, `dolar`, `precio`, `created_at`, `updated_at`) VALUES
-(1, 1.00, 64.24, '2025-02-28 05:00:38', '2025-02-28 05:00:38');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -121,13 +90,13 @@ INSERT INTO `dolares` (`id`, `dolar`, `precio`, `created_at`, `updated_at`) VALU
 
 CREATE TABLE `failed_jobs` (
   `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -137,9 +106,9 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `migrations` (
   `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `migrations`
@@ -158,9 +127,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2025_02_22_050726_create_proveedores_table', 1),
 (11, '2025_02_27_005335_create_dolars_table', 1),
 (12, '2025_02_27_225710_create_compras_table', 1),
-(13, '2025_02_28_012338_create_ventas_table', 2),
-(14, '2025_02_28_022550_create_ventas_table', 3),
-(15, '2025_02_28_022631_create_producto_venta_table', 3);
+(13, '2025_02_28_022550_create_ventas_table', 1),
+(14, '2025_02_28_022631_create_producto_venta_table', 1);
 
 -- --------------------------------------------------------
 
@@ -170,9 +138,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `model_has_permissions` (
   `permission_id` bigint UNSIGNED NOT NULL,
-  `model_type` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `model_id` bigint UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -182,18 +150,16 @@ CREATE TABLE `model_has_permissions` (
 
 CREATE TABLE `model_has_roles` (
   `role_id` bigint UNSIGNED NOT NULL,
-  `model_type` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `model_id` bigint UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `model_has_roles`
 --
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
-(1, 'App\\Models\\User', 1),
-(2, 'App\\Models\\User', 2),
-(1, 'App\\Models\\User', 3);
+(1, 'App\\Models\\User', 1);
 
 -- --------------------------------------------------------
 
@@ -202,10 +168,10 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -214,10 +180,10 @@ CREATE TABLE `password_resets` (
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -227,70 +193,70 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `permissions` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `guard_name` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'show-admin', 'web', '2025-02-28 04:23:22', '2025-02-28 04:23:22'),
-(2, 'role-list', 'web', '2025-02-28 04:23:22', '2025-02-28 04:23:22'),
-(3, 'role-show', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(4, 'role-create', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(5, 'role-edit', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(6, 'role-delete', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(7, 'user-list', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(8, 'user-show', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(9, 'user-create', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(10, 'user-edit', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(11, 'user-delete', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(12, 'permission-list', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(13, 'permission-show', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(14, 'permission-create', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(15, 'permission-edit', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(16, 'permission-delete', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(17, 'categoria-list', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(18, 'categoria-show', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(19, 'categoria-create', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(20, 'categoria-edit', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(21, 'categoria-delete', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(22, 'producto-list', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(23, 'producto-show', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(24, 'producto-create', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(25, 'producto-edit', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(26, 'producto-delete', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(27, 'cliente-list', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(28, 'cliente-show', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(29, 'cliente-create', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(30, 'cliente-edit', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(31, 'cliente-delete', 'web', '2025-02-28 04:23:23', '2025-02-28 04:23:23'),
-(32, 'proveedor-list', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(33, 'proveedor-show', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(34, 'proveedor-create', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(35, 'proveedor-edit', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(36, 'proveedor-delete', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(37, 'compra-list', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(38, 'compra-show', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(39, 'compra-create', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(40, 'compra-edit', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(41, 'compra-delete', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(42, 'venta-list', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(43, 'venta-show', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(44, 'venta-create', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(45, 'venta-edit', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(46, 'venta-delete', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(47, 'dolar-list', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(48, 'dolar-show', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(49, 'dolar-create', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(50, 'dolar-edit', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(51, 'dolar-delete', 'web', '2025-02-28 04:23:24', '2025-02-28 04:23:24'),
-(52, 'total-venta', 'web', '2025-02-28 09:30:34', '2025-02-28 09:30:34'),
-(53, 'total-compra', 'web', '2025-02-28 15:47:35', '2025-02-28 15:47:35');
+(1, 'show-admin', 'web', '2025-03-01 15:51:10', '2025-03-01 15:51:10'),
+(2, 'role-list', 'web', '2025-03-01 15:51:10', '2025-03-01 15:51:10'),
+(3, 'role-show', 'web', '2025-03-01 15:51:10', '2025-03-01 15:51:10'),
+(4, 'role-create', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(5, 'role-edit', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(6, 'role-delete', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(7, 'user-list', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(8, 'user-show', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(9, 'user-create', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(10, 'user-edit', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(11, 'user-delete', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(12, 'permission-list', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(13, 'permission-show', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(14, 'permission-create', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(15, 'permission-edit', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(16, 'permission-delete', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(17, 'categoria-list', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(18, 'categoria-show', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(19, 'categoria-create', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(20, 'categoria-edit', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(21, 'categoria-delete', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(22, 'producto-list', 'web', '2025-03-01 15:51:11', '2025-03-01 15:51:11'),
+(23, 'producto-show', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(24, 'producto-create', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(25, 'producto-edit', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(26, 'producto-delete', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(27, 'cliente-list', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(28, 'cliente-show', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(29, 'cliente-create', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(30, 'cliente-edit', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(31, 'cliente-delete', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(32, 'proveedor-list', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(33, 'proveedor-show', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(34, 'proveedor-create', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(35, 'proveedor-edit', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(36, 'proveedor-delete', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(37, 'compra-list', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(38, 'compra-show', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(39, 'compra-create', 'web', '2025-03-01 15:51:12', '2025-03-01 15:51:12'),
+(40, 'compra-edit', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(41, 'compra-delete', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(42, 'venta-list', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(43, 'venta-show', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(44, 'venta-create', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(45, 'venta-edit', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(46, 'venta-delete', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(47, 'dolar-list', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(48, 'dolar-show', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(49, 'dolar-create', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(50, 'dolar-edit', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(51, 'dolar-delete', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(52, 'total-venta', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13'),
+(53, 'total-compra', 'web', '2025-03-01 15:51:13', '2025-03-01 15:51:13');
 
 -- --------------------------------------------------------
 
@@ -300,16 +266,16 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_spanish2_ci,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -319,27 +285,20 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `productos` (
   `id` bigint UNSIGNED NOT NULL,
-  `nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `ubicacion` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ubicacion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `categoria_id` bigint UNSIGNED NOT NULL,
-  `marca` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `marca` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `precio_unitario` decimal(10,2) NOT NULL,
   `precio_caja` decimal(10,2) DEFAULT NULL,
-  `unidad_de_medida` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `unidad_de_medida` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cantidad_por_unidad` int NOT NULL,
   `cantidad` int NOT NULL,
   `proveedor_id` bigint UNSIGNED NOT NULL,
+  `codigo_barras` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
---
--- Volcado de datos para la tabla `productos`
---
-
-INSERT INTO `productos` (`id`, `nombre`, `ubicacion`, `categoria_id`, `marca`, `precio_unitario`, `precio_caja`, `unidad_de_medida`, `cantidad_por_unidad`, `cantidad`, `proveedor_id`, `created_at`, `updated_at`) VALUES
-(1, 'mortadela de pollo', 'bodega', 1, 'C.A Ebenezer', 1.00, 10.00, 'docena', 12, 1, 1, '2025-02-28 04:31:24', '2025-02-28 20:10:20'),
-(2, 'huevo', 'bodega', 1, 'C.A Ebenezer', 0.20, 15.00, 'caja', 30, 47, 1, '2025-02-28 06:00:27', '2025-02-28 20:10:20');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -356,22 +315,6 @@ CREATE TABLE `producto_venta` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Volcado de datos para la tabla `producto_venta`
---
-
-INSERT INTO `producto_venta` (`venta_id`, `producto_id`, `cantidad`, `total`, `created_at`, `updated_at`) VALUES
-(4, 2, 3, 0.60, '2025-02-28 07:07:36', '2025-02-28 07:07:36'),
-(5, 1, 2, 2.00, '2025-02-28 09:28:57', '2025-02-28 09:28:57'),
-(6, 1, 5, 5.00, '2025-02-28 09:34:05', '2025-02-28 09:34:05'),
-(6, 2, 5, 1.00, '2025-02-28 09:34:05', '2025-02-28 09:34:05'),
-(7, 1, 2, 2.00, '2025-02-28 09:59:28', '2025-02-28 10:22:09'),
-(7, 2, 1, 0.20, '2025-02-28 09:59:28', '2025-02-28 10:22:09'),
-(8, 2, 1, 0.20, '2025-02-28 06:28:56', '2025-02-28 06:28:56'),
-(9, 1, 1, 1.00, '2025-02-28 07:28:34', '2025-02-28 07:28:34'),
-(10, 1, 1, 1.00, '2025-02-28 20:10:20', '2025-02-28 20:10:20'),
-(10, 2, 1, 0.20, '2025-02-28 20:10:20', '2025-02-28 20:10:20');
-
 -- --------------------------------------------------------
 
 --
@@ -380,20 +323,13 @@ INSERT INTO `producto_venta` (`venta_id`, `producto_id`, `cantidad`, `total`, `c
 
 CREATE TABLE `proveedores` (
   `id` bigint UNSIGNED NOT NULL,
-  `nombre` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `cedula` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `telefono` varchar(255) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `nombre` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cedula` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefono` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
-
---
--- Volcado de datos para la tabla `proveedores`
---
-
-INSERT INTO `proveedores` (`id`, `nombre`, `cedula`, `email`, `telefono`, `created_at`, `updated_at`) VALUES
-(1, 'C.A Ebenezer', 'J307636297', 'ebenezer@gmail.com', '04143869692', '2025-02-28 04:30:13', '2025-02-28 04:30:13');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -403,19 +339,18 @@ INSERT INTO `proveedores` (`id`, `nombre`, `cedula`, `email`, `telefono`, `creat
 
 CREATE TABLE `roles` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `guard_name` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'web', '2025-02-28 04:23:37', '2025-02-28 04:23:37'),
-(2, 'ventas', 'web', '2025-02-28 08:19:11', '2025-02-28 08:19:11');
+(1, 'admin', 'web', '2025-03-01 15:52:10', '2025-03-01 15:52:10');
 
 -- --------------------------------------------------------
 
@@ -426,7 +361,7 @@ INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VAL
 CREATE TABLE `role_has_permissions` (
   `permission_id` bigint UNSIGNED NOT NULL,
   `role_id` bigint UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `role_has_permissions`
@@ -485,17 +420,7 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (50, 1),
 (51, 1),
 (52, 1),
-(53, 1),
-(22, 2),
-(23, 2),
-(27, 2),
-(28, 2),
-(29, 2),
-(42, 2),
-(43, 2),
-(44, 2),
-(47, 2),
-(48, 2);
+(53, 1);
 
 -- --------------------------------------------------------
 
@@ -505,23 +430,21 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 
 CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_spanish2_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', NULL, '$2y$12$SNtEy7neIPH8nSo/NKE2JuZYFd1ruQvLwvxcFY.opUtBwaFpaj3EK', 'PIb5x9GmSwNQn2W18GmVbKMJYYl7hlrhE9IdH9h17x9E4udGllpyuzQSuiMg', '2025-02-28 04:23:37', '2025-02-28 17:08:55'),
-(2, 'ventas', 'ventas@gmail.com', NULL, '$2y$12$tTcBtlU.NARJCcPhu/fdgOZC73PdYRa3XH8CV2oWFWPgCwFlLWg/W', 'JnqdFmQIkmEryq8dWY9dZapK0zmOFDHZZ4y08ngNmMsFE1vxil5wk3xvn2tC', '2025-02-28 08:20:49', '2025-02-28 08:20:49'),
-(3, 'Deivys', 'gamarraynunezd@gmail.com', NULL, '$2y$12$9W26b6rbae73LbeM3ksVIeCMFy3DNm8KbUGoxwqfB0oRKrH6htdAS', NULL, '2025-02-28 19:45:41', '2025-02-28 19:45:41');
+(1, 'admin', 'admin@gmail.com', NULL, '$2y$12$ZoakbJn4b2/HeQkFju9nGO7PoCD.TjfxtSPB/OKDmslbirPG5Z8Se', 'w2sWXMyIlkTYlJfwZqP6V23PxGRP1H3j4CltkZIdJi53vHQqWgHjIPx52kwI', '2025-03-01 15:52:10', '2025-03-01 15:52:10');
 
 -- --------------------------------------------------------
 
@@ -537,19 +460,6 @@ CREATE TABLE `ventas` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`id`, `cliente_id`, `total_dolares`, `total_bolivares`, `created_at`, `updated_at`) VALUES
-(4, 1, 0.60, 38.54, '2025-02-28 09:23:21', '2025-02-28 07:07:36'),
-(5, 2, 2.00, 128.48, '2025-02-28 09:28:57', '2025-02-28 09:28:57'),
-(6, 1, 6.00, 385.44, '2025-02-28 09:34:05', '2025-02-28 09:34:05'),
-(7, 2, 2.20, 141.33, '2025-02-28 09:59:28', '2025-02-28 09:59:28'),
-(8, 1, 0.20, 12.85, '2025-02-28 06:28:56', '2025-02-28 06:28:56'),
-(9, 2, 1.00, 64.24, '2025-02-28 07:28:34', '2025-02-28 07:28:34'),
-(10, 1, 1.20, 77.09, '2025-02-28 20:10:20', '2025-02-28 20:10:20');
 
 --
 -- Índices para tablas volcadas
@@ -695,25 +605,25 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
 --
 ALTER TABLE `compras`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `dolares`
 --
 ALTER TABLE `dolares`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `failed_jobs`
@@ -725,7 +635,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `permissions`
@@ -743,31 +653,31 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas

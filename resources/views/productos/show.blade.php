@@ -10,8 +10,8 @@
         <p class="card-text"><strong>Categoría:</strong> {{ $producto->categoria->nombre }}</p>
         <p class="card-text"><strong>Marca:</strong> {{ $producto->marca }}</p>
         <p class="card-text"><strong>Precio Unitario:</strong> {{ $producto->precio_unitario }}</p>
-        <p class="card-text"><strong>Precio Caja:</strong> {{ $producto->precio_caja }}</p>
-        <p class="card-text"><strong>Unidad de Medida:</strong> {{ $producto->unidad_de_medida }}</p>
+        <p class="card-text"><strong>Precio al Mayor:</strong> {{ $producto->precio_caja }}</p>
+        <p class="card-text"><strong>Descripción:</strong> {{ $producto->unidad_de_medida }}</p>
         <p class="card-text"><strong>Cantidad por Unidad:</strong> {{ $producto->cantidad_por_unidad }}</p>
         <p class="card-text"><strong>Cantidad:</strong> {{ $producto->cantidad }}</p>
         <p class="card-text"><strong>Proveedor:</strong> {{ $producto->proveedor->nombre }}</p>

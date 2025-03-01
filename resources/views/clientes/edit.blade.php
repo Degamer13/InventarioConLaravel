@@ -1,8 +1,6 @@
 @extends(Auth::user()->hasRole('ventas') ? 'layouts.app' : 'layouts.admin')
 @section('content')
-    <div class="container">  
-
-@section('content')
+    <div class="container">
 
     <h3>Editar Cliente</h3>
     <form action="{{ route('clientes.update', $cliente->id) }}" method="POST">

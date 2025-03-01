@@ -42,12 +42,12 @@
         </div>
 
         <div class="mb-3">
-            <label for="precio_caja" class="form-label">Precio Caja</label>
+            <label for="precio_caja" class="form-label">Precio al Mayor</label>
             <input type="number" name="precio_caja" class="form-control" step="0.01" required>
         </div>
 
         <div class="mb-3">
-            <label for="unidad_de_medida" class="form-label">Unidad de Medida</label>
+            <label for="unidad_de_medida" class="form-label">Descripción</label>
             <input type="text" name="unidad_de_medida" class="form-control" required>
         </div>
 

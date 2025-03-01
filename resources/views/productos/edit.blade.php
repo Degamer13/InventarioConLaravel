@@ -1,7 +1,7 @@
 @extends(Auth::user()->hasRole('ventas') ? 'layouts.app' : 'layouts.admin')
 
 @section('content')
-    <div class="container">  
+    <div class="container">
 
     <h3>Editar Producto</h3>
     <form action="{{ route('productos.update', $producto->id) }}" method="POST">
@@ -11,7 +11,7 @@
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" name="nombre" class="form-control" required value="{{ old('nombre', $producto->nombre) }}">
         </div>
-        
+
         <div class="mb-3">
             <label for="ubicacion" class="form-label">Ubicación</label>
             <input type="text" name="ubicacion" class="form-control" required value="{{ old('ubicacion', $producto->ubicacion) }}">
@@ -43,12 +43,12 @@
         </div>
 
         <div class="mb-3">
-            <label for="precio_caja" class="form-label">Precio Caja</label>
+            <label for="precio_caja" class="form-label">Precio al Mayor</label>
             <input type="number" name="precio_caja" class="form-control" step="0.01" required value="{{ old('precio_caja', $producto->precio_caja) }}">
         </div>
 
         <div class="mb-3">
-            <label for="unidad_de_medida" class="form-label">Unidad de Medida</label>
+            <label for="unidad_de_medida" class="form-label">Descripción</label>
             <input type="text" name="unidad_de_medida" class="form-control" required value="{{ old('unidad_de_medida', $producto->unidad_de_medida) }}">
         </div>
 
@@ -113,7 +113,7 @@
 @section('js')
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
+
     <script>
         $(document).ready(function() {
             $('.select2').select2({
@@ -121,7 +121,7 @@
                 allowClear: true,
                 width: '100%'
             });
-            
+
             // Lógica para calcular la cantidad automáticamente
             $('#cantidad_por_unidad, #multiplicador').on('input', function() {
                 let cantidadPorUnidad = parseFloat($('#cantidad_por_unidad').val()) || 0;
