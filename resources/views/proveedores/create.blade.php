@@ -31,7 +31,7 @@
         </div>
         <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" name="telefono" required>
+            <input type="tel" class="form-control" id="telefono" name="telefono" required>
         </div>
       <button type="submit" class="btn btn-primary">Guardar</button>
         <a href="{{ route('proveedores.index') }}" class="btn btn-secondary">Cancelar</a>

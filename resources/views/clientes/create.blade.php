@@ -1,6 +1,6 @@
 @extends(Auth::user()->hasRole('ventas') ? 'layouts.app' : 'layouts.admin')
 @section('content')
-    <div class="container">  
+    <div class="container">
      @if ($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <ul class="mb-0">
@@ -30,7 +30,7 @@
         </div>
         <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" name="telefono" class="form-control" required>
+            <input type="tel" name="telefono" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a href="{{ route('clientes.index') }}" class="btn btn-secondary">Cancelar</a>

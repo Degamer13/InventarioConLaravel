@@ -20,7 +20,7 @@
         </div>
         <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" name="telefono" class="form-control" value="{{ $cliente->telefono }}" required>
+            <input type="tel" name="telefono" class="form-control" value="{{ $cliente->telefono }}" required>
         </div>
         <button type="submit" class="btn btn-primary">Actualizar</button>
         <a href="{{ route('clientes.index') }}" class="btn btn-secondary">Cancelar</a>
