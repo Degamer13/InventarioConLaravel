@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends(Auth::user()->hasRole('ventas') ? 'layouts.app' : 'layouts.admin')
 
 @section('content')
 <div class="container">
@@ -9,15 +9,15 @@
         <div class="row">
             <div class="col-md-4">
                 <label for="fecha_inicio">Fecha Inicio:</label>
-                <input type="date" id="fecha_inicio" name="fecha_inicio" 
+                <input type="date" id="fecha_inicio" name="fecha_inicio"
                        class="form-control" value="{{ old('fecha_inicio', $fechaInicio) }}" required>
             </div>
             <div class="col-md-4">
                 <label for="fecha_fin">Fecha Fin:</label>
-                <input type="date" id="fecha_fin" name="fecha_fin" 
+                <input type="date" id="fecha_fin" name="fecha_fin"
                        class="form-control" value="{{ old('fecha_fin', $fechaFin) }}" required>
             </div>
-            
+
             <div class="col-md-4 d-flex align-items-end">
                 <button type="submit" class="btn btn-primary w-100">Filtrar</button>
             </div>
