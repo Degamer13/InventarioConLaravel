@@ -66,6 +66,11 @@
                                 <a class="nav-link" href="{{ route('precios.index') }}">Precio del Dólar</a>
                             </li>
                         @endcan
+                         @can('total-venta')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('totales.index') }}">Total de Ventas</a>
+                            </li>
+                        @endcan
                     </ul>
 
                     <!-- Enlaces de autenticación y opciones del usuario -->
